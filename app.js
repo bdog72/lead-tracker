@@ -1,21 +1,25 @@
 //
 //
 
+let myLeads = [];
+
 const inputEl = document.getElementById('input-el');
 const inputBtn = document.getElementById('input-btn');
 const ulEl = document.getElementById('ul-el');
 
-let myLeads = [];
-
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem('leads'));
-console.log(leadsFromLocalStorage);
+
+if (leadsFromLocalStorage) {
+  console.log('Leads in LS');
+  myLeads = leadsFromLocalStorage;
+  renderLeads();
+}
 
 inputBtn.addEventListener('click', function () {
   myLeads.push(inputEl.value);
   inputEl.value = '';
   localStorage.setItem('leads', JSON.stringify(myLeads));
   renderLeads();
-  console.log(localStorage.getItem('leads'));
 });
 
 function renderLeads() {

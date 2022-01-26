@@ -1,6 +1,10 @@
 /*  */
 /*  */
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 30px;
@@ -17,12 +21,20 @@ input {
 }
 
 button {
-  background: #5f9341;
-  color: white;
   padding: 10px 20px;
-  border: none;
+  border: 1px solid #5f9341;
   font-weight: bold;
   cursor: pointer;
+}
+
+#input-btn {
+  background: #5f9341;
+  color: white;
+}
+
+#delete-btn {
+  color: #5f9341;
+  background: white;
 }
 
 #ul-el {
