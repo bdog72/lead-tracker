@@ -39,10 +39,12 @@ button {
 
 #ul-el {
   display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  /* min-height: 70vh; */
+  min-height: 70vh;
 }
 
 ul {
@@ -53,12 +55,14 @@ ul {
 
 li {
   font-size: 25px;
-  margin-top: 5px;
+  margin-top: 15px;
+  margin-left: 20px;
 }
 
 li a {
   color: green;
   transition: color 0.1s ease-in;
+  /* text-decoration: none; */
 }
 
 li a:hover {
