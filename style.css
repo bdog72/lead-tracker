@@ -27,7 +27,8 @@ button {
   cursor: pointer;
 }
 
-#input-btn {
+#input-btn,
+#tab-btn {
   background: #5f9341;
   color: white;
 }

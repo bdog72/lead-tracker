@@ -4,9 +4,11 @@
 let myLeads = [];
 
 const inputEl = document.getElementById('input-el');
-const inputBtn = document.getElementById('input-btn');
 
+const inputBtn = document.getElementById('input-btn');
+const tabBtn = document.getElementById('tab-btn');
 const deleteBtn = document.getElementById('delete-btn');
+
 const ulEl = document.getElementById('ul-el');
 
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem('leads'));
@@ -15,6 +17,16 @@ if (leadsFromLocalStorage) {
   myLeads = leadsFromLocalStorage;
   render(myLeads);
 }
+
+// const tabs = [{ url: 'https://github.com/bdog72/' }];
+
+tabBtn.addEventListener('click', function () {
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    myLeads.push(tabs[0].url);
+    localStorage.setItem('leads', JSON.stringify(myLeads));
+    render(myLeads);
+  });
+});
 
 function render(leads) {
   let listItems = '';
